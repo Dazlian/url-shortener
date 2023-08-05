@@ -1,4 +1,4 @@
-# FastAPI URL Shortener
+# URL Shortener
 
 ## Install the Project
 
