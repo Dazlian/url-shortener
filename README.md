@@ -37,17 +37,6 @@ BASE_URL="http://url.shortener"
 DB_URL="sqlite:///./test_database.db"
 ```
 
-With an `.env` file that contains the `ENV_NAME` variable with the value `"Development"` you can verify if your external `.env` file loads correctly:
-
-```pycon
->>> from shortener_app.config import get_settings
->>> get_settings().env_name
-... loading Settings
-'Development'
-```
-
-To get an overview of the environment variables you can set, check the [`shortener_app/config.py`](shortener_app/config.py) file.
-
 ## The Documentation
 
 When the project is running you can visit the documentation in your browser:
