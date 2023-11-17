@@ -36,6 +36,16 @@ ENV_NAME="Development"
 BASE_URL="http://url.shortener"
 DB_URL="sqlite:///./test_database.db"
 ```
+## Using Docker
+Build the image using the docker command:
+```sh
+docker build docker build -t image_name .
+```
+Run the image using the docker command:
+```sh
+docker run --network host image_name
+```
+(The add --network host is to share the same local host between the host and container is optional but recommended for ease of use).  
 
 ## The Documentation
 
