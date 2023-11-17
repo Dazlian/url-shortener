@@ -1,0 +1,25 @@
+FROM python:3.9-alpine
+
+# Establece el directorio de trabajo dentro del contenedor
+WORKDIR /app
+
+# Instala git (necesario para clonar el repositorio)
+RUN apk --no-cache add git
+
+# Instala pip necesario para instalar las dependencias
+RUN git clone https://boostrap.pypa.io/get-pip.py && python get-pip.py && rm get-pip.py
+
+# Clona el repositorio 
+RUN git clone https://github.com/Dazlian/url-shortener.git .
+
+# Copia archivos específicos del repositorio clonado al directorio de trabajo
+COPY . /app
+
+# Instala las dependencias del proyecto 
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expone un puerto en el contenedor 
+EXPOSE 8000
+
+# Comando que se ejecutará al iniciar el contenedor
+CMD ["uvicorn", "shortener_app.main:app", "--reload"]
