@@ -39,7 +39,7 @@ DB_URL="sqlite:///./test_database.db"
 ## Using Docker
 Build the image using the docker command:
 ```sh
-docker build docker build -t image_name .
+docker build -t image_name .
 ```
 Run the image using the docker command:
 ```sh
